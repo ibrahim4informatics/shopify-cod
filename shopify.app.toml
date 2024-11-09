@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "2303d21601ffe6043484fdf33e8ea862"
+name = "cash-on-delivery-app"
+handle = "cash-on-delivery-app-2"
+application_url = "https://accommodate-investment-const-membrane.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://accommodate-investment-const-membrane.trycloudflare.com/auth/callback",
+  "https://accommodate-investment-const-membrane.trycloudflare.com/auth/shopify/callback",
+  "https://accommodate-investment-const-membrane.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "nextgendevtest1.myshopify.com"
+automatically_update_urls_on_dev = true
